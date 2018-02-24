@@ -28,7 +28,8 @@ export default class CircularProgress extends React.Component {
       style,
       rotation,
       linecap,
-      children
+      children,
+      ...extraProps
     } = this.props;
 
     const fill = this.extractFill(this.props.fill);
@@ -71,7 +72,7 @@ export default class CircularProgress extends React.Component {
         </Surface>
         {children && (
           <View style={childContainerStyle}>
-            {children(fill)}
+            {children(fill, extraProps)}
           </View>
         )}
       </View>
